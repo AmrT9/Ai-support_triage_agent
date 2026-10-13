@@ -23,11 +23,3 @@ streamlit run app.py
 4. Inspect retrieved policy passages and similarity scores, classifier source, validation explanation, execution trace, drafted reply, and activity dashboard.
 5. Any flagged ticket is stored in `review_queue/`, while other reply drafts are stored in `outbox/`. Logs are written to `logs/`.
 
-## Limits and behavior
-
-- No real email is sent and no remote support system is contacted.
-- A human-review queue is a **local directory**, not a notification to an actual employee.
-- Retrieval uses a default cosine similarity cutoff of 0.32; it is a starting heuristic, **not calibrated confidence**. Relevant retrieval does not prove the policy actually answers the question.
-- The local LLM validator can make mistakes. Important policy decisions, incidents, and customer-facing deployment require human approval and further evaluation.
-- The application expects the uploaded policy to apply to the company receiving the tickets.
-- Files uploaded via the interface and the activity log persist on the local machine; avoid using real personal data without appropriate security controls.
